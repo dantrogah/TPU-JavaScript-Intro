@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Output in JavaScript</title>
+  </head>
+  <body>
+    <div id="output"></div>
+
+    <script>
+      // document.write("Hello World")
+      // console.log("Hello World!");
+      document.getElementById("output").innerHTML = "<h1>Hello World</h1>";
+
+      // Adding 2 Strings Together
+      document.getElementById("output").innerHTML +=
+        "<p>This is an appended text</p>";
+
+      // Reassign Text
+      document.getElementById("output").innerHTML = "<h2>New Text</h2>";
+    </script>
+  </body>
+</html>
