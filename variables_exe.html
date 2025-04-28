@@ -8,7 +8,6 @@
   <body>
     <script>
       // Exercise 1: Declaring Variables
-
       // Declare a variable name using let and assign your name to it.
       let myName = "Daniel Ahiatrogah";
       // Declare a constant birthYear using const and assign your birth year to it.
@@ -21,6 +20,85 @@
       let message = "Hello, World";
       // Output the variable message to the console using console.log().
       console.log(message);
+
+      // Exercise 3: String Concatenation
+      // Declare two variables, firstName and lastName, and assign your first and last name to them.
+      let firstName = "Varnessa";
+      let lastName = "Ahiatrogah";
+      // Concatenate firstName and lastName to create a full name, and store it in a new variable fullName.
+      let fullName = firstName + " " + lastName;
+      // Output fullName using console.log().
+      console.log(fullName);
+
+      // Exercise 4: Basic Arithmetic Operations
+      // Declare two variables a and b, assigning numerical values to each.
+      let a = 4;
+      let b = 11;
+      // Perform addition, subtraction, multiplication, and division on these variables and store each result in separate variables.
+      let addition = a + b;
+      let substraction = a - b;
+      let multiplication = a * b;
+      let division = a / b;
+      // Output the results using console.log().
+      console.log(
+        `Addition Result: ${addition}\nSubstraction Result: ${substraction}\nMultiplication Result: ${multiplication}\nDivision Result: ${division}`
+      );
+
+      // Exercise 5: Working with Arrays
+      // Declare an array of favoriteFoods containing strings of at least three of your favorite foods.
+      let favoriteFoods = ["Jollof", "Plaintain with Kontomire Stew", "Banku"];
+      // Use a for loop to output each element of favoriteFoods to the console.
+      for (let i = 0; i < favoriteFoods.length; i++) {
+        console.log(favoriteFoods[i]);
+      }
+      // Exercise 6: Template Literals
+      // Create variables for user, score, and game, assigning appropriate values (e.g., a name, a numerical score, and a game title).
+      let user = "Nelson";
+      let userScore = 50;
+      let gameTitle = "Rocking";
+      // Using a template literal, construct a message that says "User [user] scored [score] in [game]!".
+      // Output this message using console.log().
+      console.log(`${user} scored ${userScore} in ${gameTitle} game!`);
+
+      // Exercise 7: User Input and Output
+      // Use prompt() to collect the user's name and store it in a variable.
+      let userName = prompt("Please enter your name: ");
+      // Create a greeting message using the collected name.
+      let greetingMessage = `Good morning, ${userName}`;
+      // Display the greeting message using alert().
+      alert(greetingMessage);
+
+      // Exercise 8: Type Conversion
+      // Declare a variable numString containing a number as a string (e.g., "123").
+      let numString = "123";
+      // Convert numString to an actual number and store it in a new variable num.
+      let numStringToNumber = Number(numString);
+      // Output both variables to the console, noting the difference.
+      console.log(
+        `String Number: ${numString}\nConverted To Number: ${numStringToNumber}`
+      );
+
+      // Exercise 9: Working with Objects
+      // Create an object book that includes properties for title, author, and yearPublished.
+      let book = {
+        title: "Boy In The Forest",
+        author: "Daniel Ahiatrogah",
+        yearPublished: 2021,
+      };
+      // Use console.log() to output each property of the book object in a meaningful sentence.
+      console.log(
+        `${book["author"]} published his book titled '${book["title"]}' in the year ${book["yearPublished"]}`
+      );
+
+      // Exercise 10: Function to Calculate Age
+      // Write a function calculateAge that takes a birth year as an argument and returns the age.
+      function calculateAge(birthYear) {
+        const currentYear = new Date().getFullYear();
+        return currentYear - birthYear;
+      }
+      // Call calculateAge with a birth year, store the result in a variable, and output it using console.log().
+      let computedAge = calculateAge(1994);
+      console.log(computedAge);
     </script>
   </body>
 </html>
