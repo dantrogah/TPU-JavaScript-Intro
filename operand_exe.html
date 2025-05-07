@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Operations Exercises</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Basic Arithmetic Operations
+      // Declare four variables a, b, c, and d, assigning numerical values to each.
+      let a = 12;
+      let b = 10;
+      let c = 11;
+      let d = 20;
+
+      // Calculate the sum, difference, product, and quotient of a and b.
+      let sum = a + b;
+      let difference = a - b;
+      let product = a * b;
+      let quotient = a / b;
+
+      // Use console.log() to display each result with a descriptive message.
+      console.log(`The sum is ${sum}`);
+      console.log(`The difference is ${difference}`);
+      console.log(`The product is ${product}`);
+      console.log(`The quotient is ${quotient}`);
+
+      // Exercise 2: Calculating Area of a Rectangle
+      // Create a function calculateArea that takes two parameters: length and width.
+      function calculateArea(length, width) {
+        // Inside the function, calculate the area and return the result.
+        let area = length * width;
+        return area;
+      }
+
+      // Call the function with different values and display the results using console.log().
+      console.log(calculateArea(5, 3));
+      console.log(calculateArea(10, 5));
+      console.log(calculateArea(1, 5));
+
+      // Exercise 3: Celsius to Fahrenheit Conversion
+      // Write a function celsiusToFahrenheit that takes a Celsius temperature as its parameter.
+      function celsiusToFahrenheit(celsiusTemp) {
+        // Convert the Celsius temperature to Fahrenheit using the formula F = C * 9/5 + 32.
+        let fahrenheit = (celsiusTemp * 9) / 5 + 32;
+        return fahrenheit;
+      }
+
+      console.log(celsiusToFahrenheit(100));
+
+      // Exercise 4: Increment and Decrement Operators
+      // Declare a variable count with an initial value of 0.
+      let count = 0;
+      // Use the increment operator (++) to increase the value of count and output the result.
+      count++;
+      console.log(`Count New Value is ${count}`);
+      // Use the decrement operator (--) to decrease the value of count and output the result.
+      count--;
+      console.log(`Count New Value is ${count}`);
+
+      // Exercise 5: Compound Assignment Operators
+      // Declare a variable total and assign a numerical value.
+      let total = 34;
+      // Use compound assignment operators (+=, -=, *=, /=) to modify the value of total in different ways.
+      // Output the result after each operation.
+
+      let addTo = (total += 6);
+      let subFrom = (total -= 4);
+      let multi = (total *= 2);
+      let div = (total /= 2);
+
+      console.log(`AddTo result is ${addTo}`);
+      console.log(`Substract from result is ${subFrom}`);
+      console.log(`Multiplication result is ${multi}`);
+      console.log(`Division result is ${div}`);
+
+      // Exercise 6: Calculating the Circumference of a Circle
+      // Create a function calculateCircumference that takes the radius of a circle as a parameter.
+      function calculateCircumference(radius) {
+        // Calculate the circumference using the formula C = 2 * π * radius. Use Math.PI for π.
+        let circumference = 2 * Math.PI * radius;
+        // Return the result and display it using console.log().
+        return circumference;
+      }
+
+      console.log(`Area of circle is ${calculateCircumference(15)}`);
+
+      // Exercise 7: Modulus Operator Usage
+      // Declare an array of numbers.
+      let arrayNumbers = [12, 34, 23, 11, 18];
+      // Iterate over the array using a loop.
+      for (let i = 0; i < arrayNumbers.length; i++) {
+        let number = arrayNumbers[i];
+        console.log(number);
+        // Use the modulus operator (%) to check if each number is even or odd.
+        // Output a message for each number indicating whether it's even or odd.
+        if (number % 2 === 0) {
+          console.log(`${number} is even`);
+        } else {
+          console.log(`${number} is not even`);
+        }
+      }
+
+      // Exercise 8: Exponentiation Operator
+      // Declare a base number and an exponent.
+      let baseNumber = 2;
+      let exponent = 3;
+      // Use the exponentiation operator (**) to calculate the power.
+      let power = baseNumber ** exponent;
+      // Output the result using console.log().
+      console.log(`${baseNumber} raise to the power ${exponent} = ${power}`);
+
+      // Exercise 9: Using Math Methods for Arithmetic
+      // Explore at least three Math methods such as Math.sqrt(), Math.pow(), and Math.abs().
+      // Apply these methods to appropriate numerical values.
+      // Display the results using console.log().
+      let experinmentalNumber = 10;
+
+      let sqrt = Math.sqrt(experinmentalNumber);
+      let expNumber = Math.pow(experinmentalNumber, 2);
+      let absoluteNumber = Math.abs(experinmentalNumber);
+
+      console.log(`Square root of ${experinmentalNumber} is ${sqrt}`);
+      console.log(
+        `${experinmentalNumber} raise to the power 2 is ${expNumber}`
+      );
+      console.log(
+        `The absolute value of ${experinmentalNumber} is ${absoluteNumber}`
+      );
+
+      // Exercise 10: Compound Interest Calculation
+      // Write a function calculateCompoundInterest that accepts the principal amount, interest rate (as a decimal), compounding frequency per year, and time in years.
+      function calculateCompoundInterest(principal, rate, frequency, time) {
+        // Use the compound interest formula A = P(1 + r/n)^(nt) to calculate the final amount.
+        let compoundInterest =
+          principal * Math.pow(1 + rate / frequency, frequency * time);
+        return compoundInterest;
+      }
+
+      // Return the calculated amount and use console.log() to display it.
+      let compInterest = calculateCompoundInterest(5000, 0.1, 4, 2);
+      console.log(`The Compound Interest is ${compInterest}`);
+    </script>
+  </body>
+</html>
