@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Exercise</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Basic if-else
+      // Declare a variable number and assign it a numerical value.
+      let number = -11;
+      /*
+        Use an if-else statement to check if the number is greater than 0.
+        If true, log "Positive" to the console.
+        Else, log "Negative".
+      */
+
+      if (number > 0) {
+        console.log("Positive");
+      } else {
+        console.log("Negative");
+      }
+
+      // Exercise 2: Multiple Conditions with else if
+      // Declare a variable age and assign it a numerical value.
+      let age = 11;
+      /*
+        Use if-else if-else to categorize the age into:
+        Child (< 12),
+        Teenager (12 - 18),
+        Adult (> 18).
+        Log the age group to the console.
+      */
+      if (age < 12) {
+        console.log("Child");
+      } else if (age <= 18) {
+        console.log("Teenager");
+      } else {
+        console.log("Adult");
+      }
+
+      // Exercise 3: Checking Leap Year
+      // Declare a variable year.
+      let year = 2022;
+
+      /*
+        A year is a leap year if it's divisible by 4 but not by 100, unless it's also divisible by 400.
+        Use an if-else statement to check these conditions and log whether the year is a leap year or not.
+      */
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        console.log(`${year} is a leap year`);
+      } else {
+        console.log(`${year} is NOT a leap year`);
+      }
+
+      // Exercise 4: Simple Login System
+      // Declare variables for storedUsername, storedPassword, inputUsername, and inputPassword.
+      let storedUsername = "rickyTech";
+      let storedPassword = "ricky400";
+      let inputUsername = prompt("Enter Username: ");
+      let inputPassword = prompt("Enter Password: ");
+
+      /*
+        Use if-else to check if the input credentials match the stored credentials.
+        Log "Login successful" or "Login failed" accordingly.
+      */
+      if (storedUsername == inputUsername && storedPassword == inputPassword) {
+        console.log("Login successful");
+      } else {
+        console.log("Login failed");
+      }
+
+      // Exercise 5: Grading System
+      // Declare a variable grade.
+      let grade = null;
+      let score = 46;
+      // Use if-else if-else to assign letter grades based on grade value.
+      // Log the letter grade.
+      if (score >= 80) {
+        grade = "A";
+      } else if (score >= 70) {
+        grade = "B";
+      } else if (score >= 60) {
+        grade = "C";
+      } else if (score >= 50) {
+        grade = "D";
+      } else {
+        grade = "F";
+      }
+
+      console.log(`Your grade is ${grade}`);
+
+      // Exercise 6: Even or Odd Number
+      // Declare a variable num.
+      let num = 11;
+      // Use if-else and the modulus operator (%) to determine the parity.
+      // Log "Even" or "Odd".
+
+      if (num % 2 == 0) {
+        console.log("Even");
+      } else {
+        console.log("Odd");
+      }
+
+      // Exercise 7: Validate Form Input
+      // Declare a variable userInput and assign it a value.
+      let userInput = 25;
+      // Use an if-else statement to check if userInput is an empty string.
+      // Log appropriate messages for both cases.
+
+      if (userInput === "") {
+        console.log("Input is Empty");
+      } else {
+        console.log("Input is not Empty");
+      }
+
+      // Exercise 8: Discount Offers
+      // Declare a variable purchaseAmount.
+      let purchaseAmount = 120;
+      let finalAmount = null;
+      /*
+        Use if-else if-else to apply discounts:
+        10% for amounts > $100
+        5% for amounts > $50 and ≤ $100
+        No discount otherwise.
+        Log the final amount after discount.
+      */
+      if (purchaseAmount <= 50) {
+        finalAmount = purchaseAmount;
+      } else if (purchaseAmount <= 100) {
+        finalAmount = purchaseAmount - purchaseAmount * 0.05;
+      } else if (purchaseAmount > 100) {
+        finalAmount = purchaseAmount - purchaseAmount * 0.1;
+      }
+
+      console.log(finalAmount);
+
+      // Exercise 9: Traffic Light Simulator
+      // Declare a variable trafficLight and assign it one of the colors: "green", "yellow", or "red".
+      let trafficLight = "red";
+      // Use if-else if-else to log actions based on the light (e.g., "Go", "Caution", "Stop").
+      if (trafficLight == "green") {
+        console.log("Go");
+      } else if (trafficLight == "yellow") {
+        console.log("Caution");
+      } else if (trafficLight == "red") {
+        console.log("Stop");
+      }
+
+      // Exercise 10: Password Strength Checker
+      // Declare a variable password and assign a string value.
+      let password = "abra321";
+      let wordLength = password.length;
+      // Use if-else if-else to rate password strength:
+      /*
+        Weak (< 6 characters),
+        Medium (6 - 10 characters),
+        Strong (> 10 characters).
+      */
+      if (wordLength < 6) {
+        console.log("Weak");
+      } else if (wordLength <= 10) {
+        console.log("Medium");
+      } else {
+        console.log("Strong");
+      }
+    </script>
+  </body>
+</html>

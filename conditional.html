@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional in JavaScript</title>
+  </head>
+  <body>
+    <div id="output"></div>
+
+    <script>
+      // let age = prompt("Enter your age: ");
+
+      // if (age > 20) {
+      //   document.getElementById("output").innerHTML =
+      //     "<h1>You are an adult</h1>";
+      // } else {
+      //   document.getElementById("output").innerHTML =
+      //     "<h3>You are still a teenager.</h3>";
+      // }
+
+      // Else Statement
+      // let currentYear = prompt("Enter Current Year: ");
+
+      // if (
+      //   (currentYear % 4 == 0 && currentYear % 100 != 0) ||
+      //   currentYear % 400 == 0
+      // ) {
+      //   alert(currentYear + " is a leap year");
+      // } else {
+      //   alert(currentYear + " is not a leap year.");
+      // }
+
+      // Else if Statement
+      let score = prompt("Enter score: ");
+
+      if (score > 90) {
+        document.getElementById("output").innerHTML = "<h1>Grade A+</h1>";
+      } else if (score > 80) {
+        document.getElementById("output").innerHTML = "<h1>Grade A</h1>";
+      } else if (score > 70) {
+        document.getElementById("output").innerHTML = "<h1>Grade B</h1>";
+      } else if (score > 60) {
+        document.getElementById("output").innerHTML = "<h1>Grade C</h1>";
+      } else if (score > 50) {
+        document.getElementById("output").innerHTML = "<h1>Grade D</h1>";
+      } else if (score > 40) {
+        document.getElementById("output").innerHTML = "<h1>Grade E</h1>";
+      } else {
+        document.getElementById("output").innerHTML = "<h1>Grade F</h1>";
+      }
+    </script>
+  </body>
+</html>
