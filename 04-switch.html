@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Statement Exercise</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Basic Switch Statement
+      // Declare a variable fruit and assign it the name of a fruit.
+      let fruitName = "cherry";
+      // Write a switch statement that checks the fruit variable.
+      // Create cases for at least three fruits (e.g., "apple", "banana", "cherry") and log a message to the console for each, like "Apples are red".
+
+      switch (fruitName) {
+        case "apple":
+          console.log("Apples are red");
+          break;
+        case "banana":
+          console.log("Ripe Banana is yellow in color.");
+          break;
+        case "cherry":
+          console.log("Cherry is a nice fruit");
+          break;
+        // Include a default case that logs "Unknown fruit".
+        default:
+          console.log("Unknown fruit");
+      }
+
+      // Exercise 2: Day of the Week
+      // Declare a variable dayNumber and assign it a number between 1 and 7.
+      let dayNumber = 7;
+      let day;
+      // Use a switch statement to convert dayNumber to the corresponding day of the week ("Monday" to "Sunday").
+
+      switch (dayNumber) {
+        case 1:
+          day = "Sunday";
+          break;
+        case 2:
+          day = "Monday";
+          break;
+        case 3:
+          day = "Tuesday";
+          break;
+        case 4:
+          day = "Wednesday";
+          break;
+        case 5:
+          day = "Thursday";
+          break;
+        case 6:
+          day = "Friday";
+          break;
+        case 7:
+          day = "Saturday";
+          break;
+        default:
+          day = "an unknown day";
+      }
+
+      // Log the day of the week to the console.
+      // Ensure there's a default case to handle invalid inputs.
+      console.log(`Today is ${day}`);
+
+      // Exercise 3: Grading System
+      // Declare a variable grade and assign it a letter grade (A, B, C, D, F).
+      let grade = "A";
+      let gradeDescription;
+      // Write a switch statement to log a message based on the grade (e.g., "Excellent" for "A").
+      // Remember to handle all grades and include a default case for invalid grades.
+
+      switch (grade) {
+        case "A":
+          gradeDescription = "Excellent";
+          break;
+        case "B":
+          gradeDescription = "Very Good";
+          break;
+        case "C":
+          gradeDescription = "Good";
+          break;
+        case "D":
+          gradeDescription = "Average";
+          break;
+        case "E":
+          gradeDescription = "Fail";
+          break;
+        default:
+          gradeDescription = "Unknown Grade";
+      }
+
+      console.log(gradeDescription);
+
+      // Exercise 4: Simple Calculator
+      // Declare three variables: operand1, operand2, and operator. Assign appropriate values to the operands and one of the following to the operator: "+", "-", "*", or "/".
+
+      let operand1 = 20;
+      let operand2 = 24;
+      let operator = "*";
+      let result;
+
+      // Use a switch statement to perform the operation based on the operator variable.
+      switch (operator) {
+        case "+":
+          result = operand1 + operand2;
+          break;
+        case "-":
+          result = operand1 - operand2;
+          break;
+        case "*":
+          result = operand1 * operand2;
+          break;
+        case "/":
+          result = operand1 / operand2;
+          break;
+        default:
+          result = "Unknown operator";
+      }
+      // Log the result of the operation to the console.
+      console.log(`Result: ${result}`);
+
+      // Exercise 5: Handling Multiple Cases
+      // Declare a variable color and assign it a color name.
+      let color = "purple";
+      /*
+        Use a switch statement where multiple colors (e.g., "red", "pink", "orange") log "Warm colors", and others ("blue", "green", "purple") log "Cool colors".
+        Include a default case to log "Unknown color".
+      */
+      switch (color) {
+        case "red":
+        case "pink":
+        case "orange":
+          console.log("Warm colors");
+          break;
+        case "blue":
+        case "green":
+        case "purple":
+          console.log("Cool colors");
+          break;
+        default:
+          console.log("Unknown color.");
+      }
+
+      // Exercise 6: Month Days
+      // Declare two variables: month (string) and year (number).
+      let month = "February".toLocaleLowerCase();
+      let year = 2000;
+      // Use a switch statement on month to determine the number of days in that month.
+      // Log the number of days in the month.
+      switch (month) {
+        case "january":
+        case "march":
+        case "may":
+        case "july":
+        case "august":
+        case "october":
+        case "december":
+          console.log("31 days");
+          break;
+        case "april":
+        case "june":
+        case "september":
+        case "november":
+          console.log("30 days");
+          break;
+        case "february":
+          // For February, calculate if the year is a leap year to decide between 28 or 29 days.
+          if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            console.log("29 days");
+          } else {
+            console.log("28 days");
+          }
+        default:
+          console.log("Unknown Month");
+      }
+
+      // Exercise 7: User Role Access
+      // Declare a variable role with possible values like "admin", "editor", "subscriber".
+      let role = "admin";
+      let accessLevel;
+      // Use a switch statement to log different access levels based on the user's role.
+      switch (role) {
+        case "admin":
+          accessLevel = "Admin";
+          break;
+        case "editor":
+          accessLevel = "Editor";
+          break;
+        case "subscriber":
+          accessLevel = "Subscriber";
+          break;
+        default:
+          // Ensure there's a default case for unknown roles.
+          accessLevel = "Unknown Access Level";
+      }
+
+      console.log(`Access Level: ${accessLevel}`);
+
+      // Exercise 8: Theme Switcher
+      // Declare a variable theme with values like "dark", "light", "neon".
+      let theme = "dark";
+      let background;
+      let colour;
+      // Use a switch statement to apply different background and text colors for each theme.
+
+      switch (theme) {
+        case "dark":
+          background = "blueSky";
+          colour = "white";
+          break;
+        case "light":
+          background = "orange";
+          colour: "black";
+          break;
+        case "neon":
+          background = "darkBrown";
+          colour = "white";
+          break;
+        default:
+          background = "Unknown Theme";
+          colour = "Unknown Theme";
+      }
+
+      // Log the color choices to the console.
+      console.log(`Background color: ${background}. Text Color: ${colour}`);
+
+      // Exercise 9: Command Line Parser
+      // Declare a variable command with possible command values like "start", "stop", "restart".
+      let command = "start";
+      // Use a switch statement to log what each command should do.
+      switch (command) {
+        case "start":
+          console.log("System is starting...");
+          break;
+        case "stop":
+          console.log("System is stopping...");
+          break;
+        case "restart":
+          console.log("System is restarting...");
+          break;
+        // Include a default case for unknown commands.
+        default:
+          console.log("Unknown command. Please enter valid command.");
+      }
+
+      // Exercise 10: Handling Ranges with Switch
+      // Declare a variable score and assign it a number between 1 and 100.
+      let score = 110;
+      // Convert the score into a grade range (e.g., 90-100 is A, 80-89 is B).
+      /*
+        Due to the syntax of the switch statement, you may need to use true and multiple case checks that evaluate to true (e.g., case score >= 90 && score <= 100:).
+      */
+      switch (true) {
+        case score >= 90 && score <= 100:
+          console.log("A");
+          break;
+        case score >= 80 && score <= 89:
+          console.log("B");
+          break;
+        case score >= 70 && score <= 79:
+          console.log("C");
+          break;
+        case score >= 60 && score <= 69:
+          console.log("D");
+          break;
+        case score >= 0 && score <= 59:
+          console.log("F");
+          break;
+        default:
+          console.log("Invalid score. Please try again.");
+      }
+    </script>
+  </body>
+</html>
