@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <script>
+      // const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+      // for (let i = 0; i <div fruits.length; i++) {
+      //   console.log(fruits[i]);
+      // }
+
+      const students = [
+        { name: "Alice", grades: { math: 82, science: 74, english: 91 } },
+        { name: "Bob", grades: { math: 58, science: 42, english: 80 } },
+        { name: "Clara", grades: { math: 28, science: 85, english: 72 } },
+        { name: "Mary", grades: { math: 45, science: 76, english: 72 } },
+        { name: "Dereck", grades: { math: 27, science: 50, english: 100 } },
+      ];
+
+      function calculateAverage(grades) {
+        let total = 0;
+        let count = 0;
+
+        for (let subject in grades) {
+          total += grades[subject];
+          count++;
+        }
+
+        return total / count;
+      }
+
+      function generateReportCard(students) {
+        let html = "<div class = 'report-card'>";
+
+        for (let i = 0; students.length; i++) {
+          let average = calculateAverage(students[i].grades);
+          let status = average > 70 ? "Passing" : "Failing";
+
+          html += `
+            <div class=student>
+              <h2>${students[i].name}</h2>
+              <p>Average Grade: ${average.toFixed(i)}</p>
+              <p>Status: ${status}</p>
+            </div>
+          `;
+        }
+
+        html += "</div>";
+        return html;
+      }
+
+      document.getElementById("content").innerHTML =
+        generateReportCard(students);
+    </script>
+  </body>
+</html>
