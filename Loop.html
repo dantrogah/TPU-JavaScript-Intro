@@ -38,7 +38,7 @@
       function generateReportCard(students) {
         let html = "<div class = 'report-card'>";
 
-        for (let i = 0; students.length; i++) {
+        for (let i = 0; i < students.length; i++) {
           let average = calculateAverage(students[i].grades);
           let status = average > 70 ? "Passing" : "Failing";
 

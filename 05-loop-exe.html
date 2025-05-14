@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop Practice</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Loop Through Numbers
+      // Objective: Write a for loop to print all even numbers from 2 to 100. Ensure each number is printed on a new line in the console.
+
+      for (let i = 2; i <= 100; i++) {
+        if (i % 2 == 0) {
+          console.log(i);
+        }
+      }
+
+      // Exercise 2: Array Summation
+      // Objective: Create a for loop that sums all the elements of a given array of integers. Display the sum after the loop completes. Test the loop with the array [10, 20, 30, 40, 50].
+      const numbers = [10, 20, 30, 40, 50];
+      let total = 0;
+
+      for (let i = 0; i < numbers.length; i++) {
+        total += numbers[i];
+      }
+
+      console.log(`Total = ${total.toFixed(2)}`);
+    </script>
+  </body>
+</html>
