@@ -17,7 +17,9 @@
       }
 
       // Exercise 2: Array Summation
-      // Objective: Create a for loop that sums all the elements of a given array of integers. Display the sum after the loop completes. Test the loop with the array [10, 20, 30, 40, 50].
+      /*
+      Objective: Create a for loop that sums all the elements of a given array of integers. Display the sum after the loop completes. Test the loop with the array [10, 20, 30, 40, 50].
+      */
       const numbers = [10, 20, 30, 40, 50];
       let total = 0;
 
@@ -26,6 +28,26 @@
       }
 
       console.log(`Total = ${total.toFixed(2)}`);
+
+      // Exercise 3: Character Counter
+      /*
+      Objective: Use a for loop to count how many times a specific character appears in a string. For example, count how many times the letter 'a' appears in the string "banana". Print the count to the console.
+      */
+      let countWord = "banana";
+      console.log(countWord.split("a").length - 1);
+
+      // Exercise 4: List Processing
+      /*
+        Objective: Write a for loop that processes a list of names (given as an array) and prints each name with its corresponding length. Example array: ["Alice", "Bob", "Alexander"].
+      */
+
+      let staff = ["Alice", "Bob", "Alexander"];
+
+      for (let i = 0; i < staff.length; i++) {
+        console.log(
+          `Name: ${staff[i]} ---- Character Count: ${staff[i].length}`
+        );
+      }
     </script>
   </body>
 </html>
