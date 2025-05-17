@@ -48,6 +48,56 @@
           `Name: ${staff[i]} ---- Character Count: ${staff[i].length}`
         );
       }
+
+      // Exercise 5: Find Maximum Value
+      /*
+        Objective: Implement a for loop that finds the maximum number in an array of numbers. Test your loop with the array [45, 78, 22, 89, 94, 3, 99] and print the highest number.
+
+      */
+      let numberList = [45, 78, 22, 89, 94, 3, 99];
+      let maxNumber = 0;
+
+      for (let i = 0; i < numberList.length; i++) {
+        if (numberList[i] > maxNumber) {
+          maxNumber = numberList[i];
+        }
+      }
+
+      console.log(`Maximum number is ${maxNumber}`);
+
+      // Exercise 6: Nested Loops for Matrix Addition
+      /*
+        Objective: Write a JavaScript function using two nested for loops to add two 2D matrices (arrays of arrays) of the same dimensions. For simplicity, test with 3x3 matrices like:
+        javascriptCopy codelet matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        let matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+        Print the resulting matrix.
+      */
+      let matrix1 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      let matrix2 = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1],
+      ];
+
+      function addMatrices(matrix1, matrix2) {
+        let result = [];
+
+        for (let i = 0; i < matrix1.length; i++) {
+          let row = [];
+          for (let j = 0; j < matrix1[i].length; j++) {
+            row.push(matrix1[i][j] + matrix2[i][j]);
+          }
+          result.push(row);
+        }
+
+        return result;
+      }
+
+      console.log(addMatrices(matrix1, matrix2));
     </script>
   </body>
 </html>
