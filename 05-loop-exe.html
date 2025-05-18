@@ -98,6 +98,26 @@
       }
 
       console.log(addMatrices(matrix1, matrix2));
+
+      // Exercise 7: Generate Multiplication Grid
+      /*
+       Objective: Use a for loop to create a multiplication grid (table) from 1x1 to 10x10. Each line should represent a row in the grid, formatted like "1  1 = 1, 1  2 = 2, ..., 1 * 10 = 10".
+
+      */
+      function createMultiplicationGrid() {
+        for (let i = 1; i <= 10; i++) {
+          let row = "";
+          for (let j = 1; j <= 10; j++) {
+            row += `${i} * ${j} = ${i * j}`;
+            if (j < 10) {
+              row += ", ";
+            }
+          }
+          console.log(row);
+        }
+      }
+
+      createMultiplicationGrid();
     </script>
   </body>
 </html>
