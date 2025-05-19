@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Exercise</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Concatenate Arrays
+      // Objective: Merge two arrays [1, 2, 3] and [4, 5, 6] using the concat method and print the resulting array.
+      const array1 = [1, 2, 3];
+      const array2 = [4, 5, 6];
+
+      const combinedArray = array1.concat(array2);
+
+      console.log(combinedArray);
+
+      // Exercise 2: Finding Elements
+      /*
+        Objective: Use the find method to locate the first element greater than 10 in the array [3, 5, 7, 9, 11, 13]. Print the found element.
+      */
+      const numbers = [3, 5, 7, 9, 11, 13];
+
+      const findElement = numbers.find((e) => e > 10);
+
+      console.log(findElement);
+
+      // Exercise 3: Comprehensive Filter
+      // Objective: Use the filter method to create a new array containing only the even numbers from the array [12, 5, 8, 130, 44]. Print the new array.
+      const scores = [12, 5, 8, 130, 44];
+
+      const filterElements = scores.filter((e) => e % 2 == 0);
+
+      console.log(filterElements);
+
+      // Exercise 4: Mapping Values
+      // Objective: Use the map method to create a new array that contains each number from the array [1, 2, 3, 4, 5] multiplied by 3. Print the new array.
+      const ages = [1, 2, 3, 4, 5];
+
+      const futureAges = ages.map((e) => e * 3);
+      console.log(futureAges);
+
+      // Exercise 5: Reduce to Sum
+      // Objective: Utilize the reduce method to find the sum of the numbers in the array [1, 2, 3, 4, 5]. Print the sum.
+      const ludoNumbers = [1, 2, 3, 4, 5];
+
+      const totalNumber = ludoNumbers.reduce(
+        (total, currentValue) => total + currentValue,
+        0
+      );
+
+      console.log(totalNumber);
+
+      // Exercise 6: Checking with Some and Every
+      /*
+      Objective: Given the array [13, 18, 20, 25, 30], use the some method to check if there are any numbers greater than 26, and use the every method to check if all numbers are even. Print the results for both checks.
+      */
+
+      const valuesToCheck = [13, 18, 20, 25, 30];
+
+      let numberGreater = valuesToCheck.some((number) => number > 26);
+      let allNumbersEven = valuesToCheck.every((number) => number % 2 == 0);
+
+      console.log(numberGreater);
+      console.log(allNumbersEven);
+
+      // Exercise 7: Reversing an Array
+      // Objective: Use the reverse method to reverse the array ['one', 'two', 'three']. Print the reversed array.
+
+      const numberWords = ["one", "two", "three"];
+
+      const reversedNumbers = numberWords.reverse();
+
+      console.log(reversedNumbers);
+
+      // Exercise 8: Sorting Numbers
+      // Objective: Use the sort method to sort the array [23, 1, 6, 12, 5] in ascending order. Ensure the sort works correctly for numerical values (not lexicographical). Print the sorted array.
+
+      let sortNumbers = [23, 1, 6, 12, 5];
+      sortNumbers.sort((a, b) => a - b);
+
+      console.log(sortNumbers);
+    </script>
+  </body>
+</html>
