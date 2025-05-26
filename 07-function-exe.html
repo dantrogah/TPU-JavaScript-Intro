@@ -73,6 +73,68 @@
       }
 
       console.log(factorial(5));
+
+      // Exercise 7: Using Callback Functions
+      // Objective: Implement a function processElements that takes an array and a callback function as arguments. The function should apply the callback to each element of the array and print the result.
+      let arr = [3, 5, 8, 9, 3];
+
+      function square(number) {
+        return number * number;
+      }
+
+      function processElements(arr, callback) {
+        arr.forEach((element) => {
+          let squaredNumber = callback(element);
+          console.log(squaredNumber);
+        });
+      }
+
+      processElements(arr, square);
+
+      // Exercise 8: Higher-Order Functions
+      /*
+      Objective: Design a higher-order function modifyString that takes a string and a function as arguments. The function should return the result of applying the function to the string. Test this by passing a function that appends "!!!" to the string.
+      */
+
+      function response(msg) {
+        return `${msg}!!!`;
+      }
+
+      function modifyString(name, callback) {
+        console.log(callback(name));
+      }
+
+      modifyString("Daniel", response);
+
+      // Exercise 9: Closure Example
+      /*
+        Objective: Write a function createCounter that has no parameters. It should return another function that, when invoked, returns an incremented value starting from 1. This demonstrates the use of closures.
+      */
+
+      function createCounter() {
+        let count = 1;
+
+        return function () {
+          count += 1;
+          return count;
+        };
+      }
+
+      let counter = createCounter();
+
+      console.log(counter());
+      console.log(counter());
+      console.log(counter());
+      console.log(counter());
+
+      // Exercise 10: Immediately Invoked Function Expression (IIFE)
+      /*
+        Write an IIFE that prints "I am an IIFE, executing immediately!" to the console upon script execution.
+        Each function should be tested to ensure it works as expected, ideally within a simple HTML environment or using a tool like Node.js for execution.
+      */
+      (function () {
+        console.log("I am an IIFE, executing immediately!");
+      })();
     </script>
   </body>
 </html>
