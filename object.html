@@ -9,6 +9,38 @@
     <h1>User Profile</h1>
     <p id="userInfo"></p>
 
-    <script></script>
+    <h2>Product Details</h2>
+    <div id="productInfo"></div>
+
+    <script>
+      const user = {
+        name: "Vannesa",
+        age: 31,
+        occupation: "Data Analyst",
+      };
+
+      document.getElementById("userInfo").innerHTML = `
+        <p>Name: ${user.name}</p>
+        <p>Occupation: ${user.occupation}</p>
+        <p>Age: ${user.age}</p>
+      `;
+
+      // PRODUCT INFO
+      const productDetails = {
+        id: "PS001",
+        name: "Laptop",
+        price: 5200.0,
+        description: "Del i7 Laptop",
+      };
+
+      let productInfo = `
+            <p>ID: ${productDetails.id}</p>
+            <p>NAME: ${productDetails.name}</p>
+            <p>PRICE: ${productDetails.price}</p>
+            <p>DESCRIPTION: ${productDetails.description}</p>
+            `;
+
+      document.getElementById("productInfo").innerHTML = productInfo;
+    </script>
   </body>
 </html>
