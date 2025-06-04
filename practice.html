@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Tutorial</title>
+  </head>
+  <body>
+    <h1>Object Creation</h1>
+    <div id="EmpDetails"></div>
+
+    <script>
+      const employee1 = {
+        id: "P001",
+        name: "James Addo",
+        occupation: "Sofware Developer",
+        startDate: "October 23, 2025",
+      };
+
+      let employeeReport = `
+        <p>ID: ${employee1.id}</p>
+        <p>Name: ${employee1.name}</p>
+        <p>Occupation: ${employee1.occupation}</p>
+        <p>Start Date: ${employee1.startDate}</p>
+      `;
+
+      document.getElementById("EmpDetails").innerHTML = employeeReport;
+    </script>
+  </body>
+</html>

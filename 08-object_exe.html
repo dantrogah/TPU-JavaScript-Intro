@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Challenge</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1: Create a Simple Object
+      // Task: Define a JavaScript object named person with properties for firstName, lastName, and age. Use console.log to print the properties.
+      const person = {
+        firstName: "Daniel",
+        lastName: "Doe",
+        age: 14,
+      };
+
+      console.log(`
+        First Name: ${person.firstName}
+        Last Name: ${person.lastName}
+        Age: ${person.age}
+      `);
+
+      // Exercise 2: Accessing Object Properties
+      // Task: Create an object representing a car with properties like make, model, and year. Display each property separately in the console.
+      const car = {
+        make: "Toyota",
+        model: "Camry",
+        year: 2021,
+      };
+
+      console.log("Make:" + car.make);
+      console.log("Model:" + car.model);
+      console.log("Year:" + car.year);
+
+      // Exercise 3: Modifying Object Properties
+      // Task: Create an object for a book with title, author, and publishedYear. Change the publishedYear and print the updated object.
+      const book = {
+        title: "Introduction to Programming",
+        author: "Daniel Ahiatrogah",
+        publishedYear: 2014,
+      };
+
+      console.log(`${book.title} (${book.publishedYear}) by ${book.author}`);
+
+      book.publishedYear = 2015;
+
+      console.log(`${book.title} (${book.publishedYear}) by ${book.author}`);
+
+      // Exercise 4: Object Methods
+      // Task: Define an object for a student with properties name and studyYear, and a method incrementYear that increases the studyYear by one.
+      const student = {
+        name: "Danny",
+        studyYear: 2,
+        incrementYear: function () {
+          this.studyYear += 1;
+        },
+      };
+
+      // Exercise 5: Nested Objects
+      // Task: Create an object representing a smartphone with properties brand, model, and dimensions (an object with properties height, width, and depth).
+      const smartphone = {
+        brand: "Samsung",
+        model: "Galaxy S24",
+        dimension: {
+          height: "146.3mm",
+          width: "70.9mm",
+          depth: "7.6mm",
+        },
+      };
+
+      // Exercise 6: Looping Through Object Properties
+      // Task: Define an object with several properties. Write a script that loops through the properties and prints out the property names and their values.
+      const codingBook = {
+        title: "JavaScript Basics",
+        author: "Daniel Ahiatrogah",
+        pages: 250,
+        publishedYear: 2022,
+        genre: "Programming",
+      };
+
+      for (let key in codingBook) {
+        console.log(key + ": " + codingBook[key]);
+      }
+
+      // Exercise 7: Arrays of Objects
+      // Task: Create an array of objects where each object represents a different pet and has properties for type, name, and age. Print each pet's information.
+      const pets = [
+        { type: "Dog", name: "Buddy", age: 2 },
+        { type: "Cat", name: "Cocco", age: 1 },
+        { type: "Parrot", name: "Whiskers", age: 2 },
+      ];
+
+      pets.forEach(function (pet) {
+        console.log("Type: " + pet.type);
+        console.log("Name: " + pet.name);
+        console.log("Age: " + pet.age);
+      });
+
+      // Exercise 8: Deleting Properties
+      // Task: Define an object with properties name, occupation, and age. Delete the occupation property and print the object before and after the deletion.
+      const employee = {
+        name: "Vanessa",
+        occupation: "Data Scientist",
+        age: 31,
+      };
+
+      console.log("Before Deletion:");
+      console.log(employee);
+
+      delete employee.occupation;
+
+      console.log("After Deletion:");
+      console.log(employee);
+
+      // Exercise 9: Comparing Objects
+    </script>
+  </body>
+</html>
