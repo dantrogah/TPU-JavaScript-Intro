@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const library = {
+        name: "Community Library",
+        location: "Downtown",
+        books: [
+          { title: "Programming", author: "James Doe", publishedYear: 2014 },
+          { title: "Nutrition", author: "Stella Donkor", publishedYear: 2020 },
+          {
+            title: "Theology",
+            author: "Pastor Eric Adams",
+            publishedYear: 2019,
+          },
+          { title: "Governance", author: "Daniel Quaye", publishedYear: 2021 },
+        ],
+      };
+
+      function checkOutBook(title) {
+        const book = library.books.find((book) => book.title === title);
+        return book;
+      }
+
+      const res = library.books.filter((book) => book.title === "Nutrition");
+      console.log(res);
+
+      const findMethod = library.books.find(
+        (book) => book.title === "Nutrition"
+      );
+      console.log(findMethod);
+    </script>
+  </body>
+</html>

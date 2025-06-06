@@ -114,6 +114,91 @@
       console.log(employee);
 
       // Exercise 9: Comparing Objects
+      // Task: Create two different objects that represent two different books with properties title and author. Write a function to compare if both books are written by the same author.
+      const book1 = {
+        title: "Advanced Nutrition",
+        author: "Vanessa Ahiatrogah",
+      };
+
+      const book2 = {
+        title: "Customer Care",
+        author: "Vanessa Ahiatrogah",
+      };
+
+      function compareBook(book1, book2) {
+        let checkAuthor =
+          book1.author === book2.author
+            ? "Written by the same author"
+            : "Written by different authors";
+        console.log(checkAuthor);
+      }
+
+      compareBook(book1, book2);
+
+      // Exercise 10: Complex Object Manipulation
+      /*Task: Create an object that represents a library with properties for name, location, and books (an array of books, each with a title, author, and available status). Write functions to add a book to the library, check out a book (change its available status), and list all available books.*/
+
+      const library = {
+        name: "Community Library",
+        location: "Downtown",
+        books: [],
+
+        // Function to add a book
+        addBook(book) {
+          this.books.push(book);
+          console.log(`Book titled "${book.title}" added to the library;`);
+        },
+
+        // Function to check out a book
+        checkOutBook(title) {
+          const book = this.books.find((b) => b.title === title);
+          if (book) {
+            if (book.available) {
+              book.available = false;
+              console.log(`You have successfully checked out "${book.title}".`);
+            } else {
+              console.log(`Sorry, "${book.title}" is currently not available.`);
+            }
+          } else {
+            console.log(`Book titled "${title}" not found in the library.`);
+          }
+        },
+
+        // Function to list all available books
+        listAvailableBooks() {
+          const availableBooks = this.books.filter((book) => book.available);
+          if (availableBooks.length > 0) {
+            console.log("Available Books:");
+            availableBooks.forEach((book) => {
+              console.log(`- ${book.title} by ${book.author}`);
+            });
+          } else {
+            console.log("No books are currently available.");
+          }
+        },
+      };
+
+      library.addBook({
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        available: true,
+      });
+      library.addBook({
+        title: "1984",
+        author: "George Orwell",
+        available: true,
+      });
+      library.addBook({
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        available: true,
+      });
+
+      library.listAvailableBooks();
+
+      library.checkOutBook("1984");
+
+      library.listAvailableBooks();
     </script>
   </body>
 </html>
