@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .thumbnail {
+        width: 300px;
+        border: 2px solid green;
+        cursor: pointer;
+      }
+
+      .outer {
+        width: 400px;
+        color: white;
+        background-color: blue;
+      }
+
+      .middle {
+        background-color: green;
+      }
+
+      .inner {
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="clickBtn">Click Me!</button>
+    <img
+      src="img/thumbnail-1.webp"
+      alt="thumbnail"
+      id="thumbnail"
+      class="thumbnail"
+    />
+    <p id="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quae
+      quidem ratione adipisci maxime impedit distinctio earum animi, ipsum,
+      doloribus commodi excepturi fugit nostrum accusantium velit ab soluta
+      quisquam libero.
+    </p>
+
+    <button class="btn" id="btn-1">Click Me!</button>
+    <button class="btn" id="btn-2">Click Me!</button>
+    <button class="btn" id="btn-3">Click Me!</button>
+
+    <input type="text" id="userInput" />
+    <p class="content" id="contentText"></p>
+
+    <!-- Question 6 -->
+    <form action="">
+      <input type="text" name="input" id="nameInput" />
+      <button class="submit" id="submit">Submit</button>
+    </form>
+    <p id="enteredName"></p>
+
+    <!-- Question 7 -->
+    <div class="outer">
+      outer
+      <div class="middle">
+        middle
+        <div class="inner">inner</div>
+      </div>
+    </div>
+    <script>
+      // Exercise 1: Basic Click Event
+      // Task: Create a button in HTML. Use JavaScript to display an alert that says "Button clicked!" whenever the button is clicked.
+      document
+        .getElementById("clickBtn")
+        .addEventListener("click", function () {
+          alert("Button clicked!");
+        });
+
+      // Exercise 2: Mouse Over Event
+      // Task: Create an image in your HTML document. Write JavaScript that changes the image’s border color when the mouse hovers over it.
+      const image = document.getElementById("thumbnail");
+
+      image.addEventListener("mouseover", () => {
+        image.style.borderColor = "red";
+      });
+
+      image.addEventListener("mouseout", () => {
+        image.style.borderColor = "green";
+      });
+
+      // Exercise 3: Event Listener
+      // Task: Add an event listener to a paragraph. When the paragraph is clicked, change its text content to "I was clicked!".
+      const para = document.getElementById("para");
+
+      para.addEventListener("click", () => {
+        para.innerText = "I was clicked!";
+      });
+
+      // Exercise 4: Multiple Buttons, One Handler
+      // Task: Create three buttons with the text "Click me!". Use a single event handler to display an alert showing which button was clicked based on its index.
+
+      const buttons = document.querySelectorAll(".btn");
+      // console.log(buttons);
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          alert(`Button ${index + 1} was clicked!`);
+        });
+      });
+
+      // Exercise 5: Keyboard Events
+      // Task: Capture and log every keypress in an input field. When the enter key is pressed, display the content of the input in a dedicated paragraph.
+      const input = document.getElementById("userInput");
+      const paraText = document.getElementById("contentText");
+
+      input.addEventListener("keydown", (event) => {
+        console.log(event.key);
+
+        if (event.key === "Enter") {
+          event.preventDefault();
+          paraText.textContent = "You typed: " + input.value;
+        }
+      });
+
+      // Exercise 6: Form Submission Event
+      // Task: Create a form with a name input and a submit button. Prevent the form’s default submission using JavaScript and instead display the entered name below the form when submitted.
+      const nameInput = document.getElementById("nameInput");
+      const btnClick = document.getElementById("submit");
+
+      btnClick.addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("enteredName").innerText = nameInput.value;
+      });
+
+      // Exercise 7: Event Propagation
+      // Demonstrate event bubbling and capturing. Create nested div elements, each with a different background color. Use console.log to show how events bubble up or are captured.
+      // Capturing Phase: Events are handled from outermost to innermost.
+      // Bubbling Phase: Events bubble from innermost to outermost.
+      const outer = document.querySelector(".outer");
+      const middle = document.querySelector(".middle");
+      const inner = document.querySelector(".inner");
+
+      outer.addEventListener(
+        "click",
+        () => {
+          console.log("Outer div --- capturing.");
+        },
+        true
+      );
+
+      middle.addEventListener(
+        "click",
+        () => {
+          console.log("Middle div --- capturing.");
+        },
+        true
+      );
+
+      inner.addEventListener(
+        "click",
+        () => {
+          console.log("Inner div --- capturing.");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>
