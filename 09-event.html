@@ -63,6 +63,22 @@
         <div class="inner">inner</div>
       </div>
     </div>
+
+    <!-- Question 8  -->
+    <button id="toggleBtn">Click Me Once</button>
+    <!-- <button id="toggleBtn2">Restore Button</button> -->
+
+    <!-- Question 9 -->
+    <h2>Add New User</h2>
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Enter name" required />
+      <input type="text" id="email" placeholder="Enter email" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <h3>User List</h3>
+    <ul id="userList"></ul>
+
     <script>
       // Exercise 1: Basic Click Event
       // Task: Create a button in HTML. Use JavaScript to display an alert that says "Button clicked!" whenever the button is clicked.
@@ -158,6 +174,34 @@
         },
         true
       );
+
+      // Exercise 8: Adding and Removing Event Listeners
+      // Task: Create a toggle button that when clicked, disables further clicking on itself by removing its own click event listener.
+      const button = document.getElementById("toggleBtn");
+      // const button2 = document.getElementById("toggleBtn2");
+
+      function handleClick() {
+        console.log("Button was clicked!");
+        button.textContent = "Disabled";
+
+        // Disable the button visually (optional)
+        button.disabled = true;
+
+        // // Remove the click event listener
+        // button.removeEventListener("click", handleClick);
+      }
+
+      // Remove the click event listener
+      // button.removeEventListener("click", handleClick);
+
+      // Attach the click event
+      button.addEventListener("click", handleClick);
+
+      // Exercise 9: Custom Events
+      // Define a custom event called newUser and dispatch it when a user fills out a form. Listen for this event and update a list on the page with the new user's data.
+
+      const form = document.getElementById("userForm");
+      const userList = document.getElementById("userList");
     </script>
   </body>
 </html>

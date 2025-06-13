@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postion Practice</title>
+    <style>
+      /*
+      static (default position for HTML elements)
+      fixed
+      relative
+      absolute
+
+      Browser window
+      Web Page
+      z-index
+       */
+      .body {
+        margin: 0;
+        height: 200vh;
+        position: relative;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+
+      .header {
+        color: white;
+        font-size: 96px;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: fixed;
+        z-index: 1;
+        background-image: url("img/thumbnail-2.webp");
+      }
+
+      .aside {
+        width: 80px;
+
+        background-color: lightsalmon;
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+      }
+
+      .mark {
+        font-size: 10px;
+        padding: 5px;
+        border-radius: 2px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      .video-grid {
+        padding-top: 60px;
+        padding-left: 80px;
+      }
+
+      .box1 {
+        background-color: lightblue;
+        position: relative;
+        /* z-index: 101; */
+      }
+
+      .box2 {
+        background-color: lightpink;
+        position: relative;
+        /* z-index: 101; */
+      }
+    </style>
+  </head>
+  <body class="body">
+    <input type="date" />
+    <div class="header">I love coding</div>
+    <div class="aside"></div>
+    <div class="video-grid">
+      <div class="box box1">
+        <div class="mark">8:10</div>
+      </div>
+      <div class="box box2">
+        <div class="mark">12:14</div>
+      </div>
+    </div>
+  </body>
+</html>
