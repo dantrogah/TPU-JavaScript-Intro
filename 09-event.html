@@ -72,7 +72,7 @@
     <h2>Add New User</h2>
     <form id="userForm">
       <input type="text" id="name" placeholder="Enter name" required />
-      <input type="text" id="email" placeholder="Enter email" required />
+      <input type="email" id="email" placeholder="Enter email" required />
       <button type="submit">Add User</button>
     </form>
 
@@ -199,9 +199,34 @@
 
       // Exercise 9: Custom Events
       // Define a custom event called newUser and dispatch it when a user fills out a form. Listen for this event and update a list on the page with the new user's data.
-
       const form = document.getElementById("userForm");
       const userList = document.getElementById("userList");
+
+      // Listen for the custom event
+      document.addEventListener("newUser", function (event) {
+        const { name, email } = event.detail;
+
+        const li = document.createElement("li");
+        li.textContent = `${name} (${email})`;
+        userList.appendChild(li);
+      });
+
+      // Handle form submission
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        // Create and dispatch the custom event
+        const newUserEvent = new CustomEvent("newUser", {
+          detail: { name, email },
+        });
+        document.dispatchEvent(newUserEvent);
+
+        // Clear form
+        form.reset();
+      });
     </script>
   </body>
 </html>
