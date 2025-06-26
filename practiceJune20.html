@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="quiz">
+      <h2>What is the capital of France?</h2>
+      <div class="options">
+        <button data-correct="false">Berlin</button>
+        <button data-correct="true">Paris</button>
+        <button data-correct="false">Madrid</button>
+        <button data-correct="false">Rome</button>
+      </div>
+      <p id="feedback"></p>
+    </div>
+
+    <script>
+      const quizContainer = document.getElementById("quiz");
+      const feedback = document.getElementById("feedback");
+
+      // Event delegation: listen for clicks on quiz container
+      quizContainer.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          const isCorrect = e.target.getAttribute("data-correct") === "true";
+
+          if (isCorrect) {
+            feedback.textContent = "✅ Correct!";
+            feedback.style.color = "green";
+          } else {
+            feedback.textContent = "❌ Wrong answer. Try again!";
+            feedback.style.color = "red";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

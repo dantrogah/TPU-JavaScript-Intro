@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling in JavaScript</title>
+  </head>
+  <body>
+    <form action="" id="userForm">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter your name"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter email"
+        required
+      />
+      <button type="submit">Add User</button>
+    </form>
+
+    <ul id="userList"></ul>
+
+    <script>
+      // Grab the form and list element
+      const form = document.getElementById("userForm");
+      const userList = document.getElementById("userList");
+
+      // Listen to form submit event
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        // Create custom event
+        const newUserEvent = new CustomEvent("newUser", {
+          detail: { name, email },
+        });
+
+        // Dispatch the custom event
+        document.dispatchEvent(newUserEvent);
+
+        // Clear form fields
+        form.reset();
+      });
+
+      // Listen for custom event 'newUser'
+      document.addEventListener("newUser", (e) => {
+        const { name, email } = e.detail;
+        const li = document.createElement("li");
+        li.textContent = `Name: ${name}, Email: ${email}`;
+        userList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
