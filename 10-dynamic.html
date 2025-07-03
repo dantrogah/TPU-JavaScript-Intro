@@ -4,6 +4,223 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dynamic HTML</title>
+    <style>
+      #myTable {
+        width: 60%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      tr:hover {
+        background: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .highlight {
+        background-color: #d1e7fd !important;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- Exercise 1: Changing Text Content
+      Task: Create a simple HTML page with a paragraph. Add a button that, when clicked, changes the text of the paragraph to "Hello, world!" 
+    -->
+    <p id="post">Hi, Coders</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- 
+    Exercise 2: Creating Elements
+      Task: Add a button to your HTML that, when clicked, creates a new <div> element with some text inside it and appends this div to the body of the document.
+    -->
+    <button onclick="appendDiv()">Add Content</button>
+
+    <!-- 
+        Exercise 3: Modifying Styles
+        Task: Create three <span> elements each containing a different color name (e.g., Red, Green, Blue). Add JavaScript that changes the text color of each span to the color it names when hovered over.
+    -->
+    <br />
+    <br />
+
+    <span id="red">Red</span>
+    <span id="green">Green</span>
+    <span id="blue">Blue</span>
+
+    <!-- 
+    Exercise 4: Toggle Visibility
+      Task: Create a list of items and a button labeled "Toggle Visibility". When the button is clicked, toggle the visibility of the list using JavaScript.
+    -->
+    <ul id="cities">
+      <li>Nkwanta</li>
+      <li>Krachi</li>
+      <li>Dambai</li>
+    </ul>
+    <br />
+    <button id="toggleBtn">Toggle visibility</button>
+
+    <!-- 
+      Exercise 5: Update a List
+      Task: Provide a text input field and a button labeled "Add Item". When the button is clicked, add the content of the text input as a new item in an existing unordered list. Clear the input field after adding the item.
+    -->
+    <br />
+    <br />
+    <input id="userInput" type="text" />
+    <button id="addItem">Add Item</button>
+    <ul id="addToList"></ul>
+
+    <!-- 
+        Exercise 6: Dynamic Form Fields
+        Task: Create a form with one input field and a button labeled "Add More Fields". Each button click should add another input field to the form.
+    -->
+    <form action="" id="theForm">
+      <input type="text" />
+    </form>
+    <button id="anotherField">Add More Fields</button>
+
+    <!-- 
+      Exercise 7: Removing Elements
+      Task: Display an ordered list of names with a "Remove" button next to each name. When a button is clicked, remove the corresponding list item from the DOM.
+    -->
+    <ol>
+      <li>John <button onclick="removeList(this)">John</button></li>
+      <li>Mercy <button onclick="removeList(this)">Mercy</button></li>
+      <li>Patience <button onclick="removeList(this)">Patience</button></li>
+    </ol>
+
+    <!-- 
+    Exercise 8: Table Row Highlighting
+    Task: Create a table with multiple rows. Add JavaScript that changes the background color of a row when it is clicked. Ensure that selecting a new row returns the previously selected row to its original color.
+    -->
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Smith</td>
+          <td>Nelson</td>
+        </tr>
+        <tr>
+          <td>Irene</td>
+          <td>Thompson</td>
+        </tr>
+        <tr>
+          <td>Dan</td>
+          <td>Mark</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 
+      Exercise 9: Sorting Data
+      Task: Display a list of numbers or names in a <ul>. Provide buttons to sort the list ascendingly and descendingly without refreshing the page.
+    -->
+    <ul id="listItems">
+      <li>John</li>
+      <li>Michael</li>
+      <li>Samuel</li>
+      <li>Timothy</li>
+      <li>Delali</li>
+    </ul>
+    <button onclick="sortList('asc')">Sort Ascending</button>
+    <button onclick="sortList('desc')">Sort Descending</button>
+    <script>
+      // Ex 9
+      function sortList(order) {
+        const ul = document.getElementById("listItems");
+        const items = Array.from(ul.getElementsByTagName("li"));
+        items.sort((a, b) => {
+          const texta = a.textContent.toLowerCase();
+          const textb = b.textContent.toLowerCase();
+          return order === "asc"
+            ? texta.localeCompare(textb)
+            : textb.localeCompare(texta);
+        });
+        ul.innerHTML = "";
+        items.forEach((item) => ul.appendChild(item));
+      }
+
+      // Ex 8
+      const rows = document.querySelectorAll("#myTable tbody tr");
+      console.log(rows);
+      let selectedRow = null;
+
+      rows.forEach((row) => {
+        row.addEventListener("click", () => {
+          if (selectedRow) {
+            selectedRow.classList.remove("highlight");
+          }
+
+          row.classList.add("highlight");
+
+          selectedRow = row;
+        });
+      });
+
+      // Ex 7
+      function removeList(button) {
+        const listParent = button.parentElement;
+        listParent.remove();
+      }
+
+      // Ex 6
+      document.getElementById("anotherField").addEventListener("click", () => {
+        const newField = document.createElement("input");
+        document.getElementById("theForm").appendChild(newField);
+      });
+
+      // Ex 5
+      document.getElementById("addItem").addEventListener("click", () => {
+        const userInput = document.getElementById("userInput");
+        const li = document.createElement("li");
+        li.textContent = userInput.value;
+        document.getElementById("addToList").appendChild(li);
+        userInput.value = "";
+      });
+
+      // Ex 4
+      document.getElementById("toggleBtn").addEventListener("click", () => {
+        document.getElementById("cities").style.display = "None";
+      });
+
+      // Ex 3
+      const red = document.getElementById("red");
+      red.addEventListener("mouseover", () => {
+        red.style.backgroundColor = "red";
+      });
+
+      const green = document.getElementById("green");
+      green.addEventListener("mouseover", () => {
+        green.style.backgroundColor = "green";
+      });
+
+      const blue = document.getElementById("blue");
+      blue.addEventListener("mouseover", () => {
+        blue.style.backgroundColor = "blue";
+      });
+
+      // Ex 2
+      function appendDiv() {
+        const div = document.createElement("div");
+        div.textContent = "Hello World";
+        document.body.appendChild(div);
+      }
+
+      // Ex 1
+      function changeText() {
+        document.getElementById("post").textContent = "Hello, world!";
+      }
+    </script>
+  </body>
 </html>

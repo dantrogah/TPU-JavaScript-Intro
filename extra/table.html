@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice 01</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      button {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sortable List</h2>
+
+    <button onclick="sortList('asc')">Sort Ascending</button>
+    <button onclick="sortList('desc')">Sort Descending</button>
+
+    <ul id="nameList">
+      <li>Regina</li>
+      <li>Vera</li>
+      <li>Vanessa</li>
+      <li>Patience</li>
+      <li>Belinda</li>
+      <li>Faustina</li>
+    </ul>
+
+    <script>
+      function sortList(order) {
+        const ul = document.getElementById("nameList");
+        const items = Array.from(ul.getElementsByTagName("li"));
+
+        items.sort((a, b) => {
+          const textA = a.textContent.toLowerCase();
+          const textB = b.textContent.toLowerCase();
+          return order === "asc"
+            ? textA.localeCompare(textB)
+            : textB.localeCompare(textA);
+        });
+
+        ul.innerHTML = ""; // Clear current list
+
+        items.forEach((item) => ul.appendChild(item)); // Re-add sorted items
+      }
+    </script>
+  </body>
+</html>

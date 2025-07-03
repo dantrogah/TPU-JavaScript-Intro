@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic HTML</title>
+  </head>
+  <body>
+    <form action="" id="myForm">
+      <input
+        type="text"
+        name="field1"
+        id="input-field"
+        placeholder="Enter value"
+      />
+    </form>
+
+    <button type="button" onclick="addInputField()">Add More Fields</button>
+
+    <script>
+      let fieldCount = 1;
+
+      function addInputField() {
+        fieldCount++;
+
+        const form = document.getElementById("myForm");
+
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.name = "field" + fieldCount;
+        newInput.className = "input-field";
+        newInput.placeholder = "Enter value";
+
+        form.appendChild(newInput);
+      }
+    </script>
+  </body>
+</html>

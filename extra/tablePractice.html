@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Event</title>
+    <style>
+      #myTable {
+        width: 60%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .hightlight {
+        background-color: #d1e7fd !important;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Adams</td>
+          <td>Smith</td>
+        </tr>
+        <tr>
+          <td>Linda</td>
+          <td>Palm</td>
+        </tr>
+        <tr>
+          <td>Patience</td>
+          <td>Addison</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const rows = document.querySelectorAll("#myTable tbody tr");
+      let selectedRow = null;
+
+      rows.forEach((row) => {
+        row.addEventListener("click", () => {
+          // row.style.backgroundColor = "green";
+          if (selectedRow) {
+            selectedRow.classList.remove("hightlight");
+          }
+
+          row.classList.add("hightlight");
+
+          selectedRow = row;
+        });
+      });
+    </script>
+  </body>
+</html>
